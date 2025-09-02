@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - E-Commerce Storefront</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <h1>STORE</h1>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger">
+          <img src="assets/icons/menu.png" alt="Menu" />
+        </div>
+
+        <!-- Center: Search + Menu -->
+        <div class="nav-center" id="nav-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Search products..." />
+            <button>
+              <img src="assets/icons/search.png" alt="Search Icon" />
+            </button>
+          </div>
+          <ul class="nav-links">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Icons -->
+        <div class="nav-icons">
+          <a href="wishlist.html"
+            ><img src="assets/icons/wishlist.png" alt="Wishlist"
+          /></a>
+          <a href="cart.html" class="active"
+            ><img src="assets/icons/cart.png" alt="Cart"
+          /></a>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Cart Header -->
+    <section class="cart-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="separator">></span>
+            <span class="current">Shopping Cart</span>
+          </div>
+          <h1>Shopping Cart</h1>
+          <p>Review your items and proceed to checkout</p>
+        </div>
+        <div class="cart-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="cart-count">0</span>
+            <span class="stat-label">Items</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="cart-total">$0.00</span>
+            <span class="stat-label">Total</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="cart-content">
+          <!-- Cart Items Section -->
+          <div class="cart-items-section">
+            <div class="section-header">
+              <h2>Cart Items</h2>
+              <button class="btn secondary" id="clear-cart">
+                <img src="assets/icons/trash.png" alt="Clear" />
+                Clear All
+              </button>
+            </div>
+
+            <!-- Cart Items List -->
+            <div class="cart-items" id="cart-items">
+              <!-- Cart items will be populated by JavaScript -->
+            </div>
+
+            <!-- Empty Cart State -->
+            <div class="empty-cart" id="empty-cart" style="display: none">
+              <div class="empty-icon">
+                <svg
+                  width="80"
+                  height="80"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3>Your cart is empty</h3>
+              <p>Looks like you haven't added any items to your cart yet</p>
+              <div class="empty-actions">
+                <a href="men.html" class="btn primary">
+                  <img src="assets/icons/shop.png" alt="Shop" />
+                  Shop Men
+                </a>
+                <a href="women.html" class="btn secondary">
+                  <img src="assets/icons/shop.png" alt="Shop" />
+                  Shop Women
+                </a>
+                <a href="kids.html" class="btn secondary">
+                  <img src="assets/icons/shop.png" alt="Shop" />
+                  Shop Kids
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkout Section -->
+          <div class="checkout-section">
+            <div class="checkout-card">
+              <h3>Order Summary</h3>
+
+              <!-- Order Details -->
+              <div class="order-details">
+                <div class="detail-row">
+                  <span>Subtotal</span>
+                  <span id="subtotal">$0.00</span>
+                </div>
+                <div class="detail-row">
+                  <span>Shipping</span>
+                  <span id="shipping">$0.00</span>
+                </div>
+                <div class="detail-row">
+                  <span>Tax</span>
+                  <span id="tax">$0.00</span>
+                </div>
+                <div class="detail-row total">
+                  <span>Total</span>
+                  <span id="order-total">$0.00</span>
+                </div>
+              </div>
+
+              <!-- Shipping Options -->
+              <div class="shipping-options">
+                <h4>Shipping Method</h4>
+                <div class="shipping-method">
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="shipping"
+                      value="standard"
+                      checked
+                    />
+                    <span class="checkmark"></span>
+                    <div class="option-content">
+                      <span class="option-title">Standard Shipping</span>
+                      <span class="option-desc">5-7 business days</span>
+                    </div>
+                    <span class="option-price">$5.99</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="shipping" value="express" />
+                    <span class="checkmark"></span>
+                    <div class="option-content">
+                      <span class="option-title">Express Shipping</span>
+                      <span class="option-desc">2-3 business days</span>
+                    </div>
+                    <span class="option-price">$12.99</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Promo Code -->
+              <div class="promo-code">
+                <h4>Promo Code</h4>
+                <div class="promo-input">
+                  <input
+                    type="text"
+                    id="promo-input"
+                    placeholder="Enter promo code"
+                  />
+                  <button class="btn secondary" id="apply-promo">
+                    <img src="assets/icons/check.png" alt="Apply" />
+                    Apply
+                  </button>
+                </div>
+                <div
+                  class="promo-applied"
+                  id="promo-applied"
+                  style="display: none"
+                >
+                  <span id="promo-text"></span>
+                  <button class="remove-promo" id="remove-promo">
+                    &times;
+                  </button>
+                </div>
+              </div>
+
+              <!-- Checkout Button -->
+              <button
+                class="btn primary checkout-btn"
+                id="checkout-btn"
+                disabled
+              >
+                <img src="assets/icons/checkout.png" alt="Checkout" />
+                Proceed to Checkout
+              </button>
+
+              <!-- Continue Shopping -->
+              <div class="continue-shopping">
+                <a href="men.html">← Continue Shopping</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recently Viewed -->
+        <section class="recently-viewed">
+          <h2>Recently Viewed</h2>
+          <div class="products-grid" id="recently-viewed-grid">
+            <!-- Recently viewed products will be populated by JavaScript -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="checkout-modal-close">&times;</button>
+        <div class="modal-body">
+          <div class="checkout-steps">
+            <!-- Step 1: Shipping Information -->
+            <div class="checkout-step active" id="step-1">
+              <h3>Shipping Information</h3>
+              <form class="checkout-form" id="shipping-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="firstName"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="lastName"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                  <label for="address">Street Address</label>
+                  <input type="text" id="address" name="address" required />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" name="zip" required />
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn secondary" id="back-to-cart">
+                    <img src="assets/icons/arrow-left.png" alt="Back" />
+                    Back to Cart
+                  </button>
+                  <button type="button" class="btn primary" id="next-step">
+                    <img src="assets/icons/arrow-right.png" alt="Next" />
+                    Continue to Payment
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Step 2: Payment Information -->
+            <div class="checkout-step" id="step-2">
+              <h3>Payment Information</h3>
+              <form class="checkout-form" id="payment-form">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    name="cardNumber"
+                    placeholder="1234 5678 9012 3456"
+                    required
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input
+                      type="text"
+                      id="expiry"
+                      name="expiry"
+                      placeholder="MM/YY"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input
+                      type="text"
+                      id="cvv"
+                      name="cvv"
+                      placeholder="123"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Name on Card</label>
+                  <input type="text" id="card-name" name="cardName" required />
+                </div>
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    class="btn secondary"
+                    id="back-to-shipping"
+                  >
+                    <img src="assets/icons/arrow-left.png" alt="Back" />
+                    Back
+                  </button>
+                  <button type="button" class="btn primary" id="place-order">
+                    <img src="assets/icons/check.png" alt="Order" />
+                    Place Order
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Step 3: Order Confirmation -->
+            <div class="checkout-step" id="step-3">
+              <div class="order-confirmation">
+                <div class="success-icon">
+                  <svg
+                    width="80"
+                    height="80"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                    />
+                  </svg>
+                </div>
+                <h3>Order Placed Successfully!</h3>
+                <p>
+                  Thank you for your purchase. Your order has been confirmed.
+                </p>
+                <div class="order-info">
+                  <p>
+                    <strong>Order Number:</strong>
+                    <span id="order-number">#12345</span>
+                  </p>
+                  <p>
+                    <strong>Estimated Delivery:</strong>
+                    <span id="delivery-date">5-7 business days</span>
+                  </p>
+                </div>
+                <div class="confirmation-actions">
+                  <a href="index.html" class="btn primary">
+                    <img src="assets/icons/shop.png" alt="Shop" />
+                    Continue Shopping
+                  </a>
+                  <button class="btn secondary" id="close-checkout">
+                    <img src="assets/icons/close.png" alt="Close" />
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="assets/icons/facebook.png" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="assets/icons/instagram.png" alt="Instagram"
+            /></a>
+            <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Your Store. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

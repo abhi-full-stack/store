@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids' Collection - E-Commerce Storefront</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/kids.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <h1>STORE</h1>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger">
+          <img src="assets/icons/menu.png" alt="Menu" />
+        </div>
+
+        <!-- Center: Search + Menu -->
+        <div class="nav-center" id="nav-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Search products..." />
+            <button>
+              <img src="assets/icons/search.png" alt="Search Icon" />
+            </button>
+          </div>
+          <ul class="nav-links">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html" class="active">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Icons -->
+        <div class="nav-icons">
+          <a href="wishlist.html"
+            ><img src="assets/icons/wishlist.png" alt="Wishlist"
+          /></a>
+          <a href="cart.html"><img src="assets/icons/cart.png" alt="Cart" /></a>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Header / Banner -->
+    <section class="category-banner">
+      <div class="container">
+        <div class="banner-content">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="separator">></span>
+            <span class="current">Kids</span>
+          </div>
+          <h1>Shop Kids' Collection</h1>
+          <p>Discover fun and comfortable styles for little ones</p>
+        </div>
+        <div class="banner-image">
+          <img
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&crop=center"
+            alt="Kids' Fashion"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- Filters Sidebar -->
+          <aside class="filters-sidebar" id="filters-sidebar">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button class="close-filters" id="close-filters">
+                <span>&times;</span>
+              </button>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-section">
+              <h4>Price Range</h4>
+              <div class="price-range">
+                <input
+                  type="range"
+                  id="price-min"
+                  min="0"
+                  max="200"
+                  value="0"
+                  class="price-slider"
+                />
+                <input
+                  type="range"
+                  id="price-max"
+                  min="0"
+                  max="200"
+                  value="200"
+                  class="price-slider"
+                />
+                <div class="price-inputs">
+                  <input
+                    type="number"
+                    id="price-min-input"
+                    placeholder="Min"
+                    min="0"
+                    max="200"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    id="price-max-input"
+                    placeholder="Max"
+                    min="0"
+                    max="200"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="filter-section">
+              <h4>Categories</h4>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" value="tops" />
+                  <span class="checkmark"></span>
+                  Tops
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="bottoms" />
+                  <span class="checkmark"></span>
+                  Bottoms
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="dresses" />
+                  <span class="checkmark"></span>
+                  Dresses
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="outerwear" />
+                  <span class="checkmark"></span>
+                  Outerwear
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="shoes" />
+                  <span class="checkmark"></span>
+                  Shoes
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="accessories" />
+                  <span class="checkmark"></span>
+                  Accessories
+                </label>
+              </div>
+            </div>
+
+            <!-- Age Group -->
+            <div class="filter-section">
+              <h4>Age Group</h4>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" value="toddler" />
+                  <span class="checkmark"></span>
+                  Toddler (2-4)
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="preschool" />
+                  <span class="checkmark"></span>
+                  Preschool (4-6)
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="school-age" />
+                  <span class="checkmark"></span>
+                  School Age (6-12)
+                </label>
+              </div>
+            </div>
+
+            <!-- Size -->
+            <div class="filter-section">
+              <h4>Size</h4>
+              <div class="size-options">
+                <button class="size-btn" data-size="2T">2T</button>
+                <button class="size-btn" data-size="3T">3T</button>
+                <button class="size-btn" data-size="4T">4T</button>
+                <button class="size-btn" data-size="5">5</button>
+                <button class="size-btn" data-size="6">6</button>
+                <button class="size-btn" data-size="7">7</button>
+                <button class="size-btn" data-size="8">8</button>
+              </div>
+            </div>
+
+            <!-- Color -->
+            <div class="filter-section">
+              <h4>Color</h4>
+              <div class="color-options">
+                <button
+                  class="color-btn"
+                  data-color="blue"
+                  style="background-color: #0066cc"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="red"
+                  style="background-color: #cc0000"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="green"
+                  style="background-color: #006600"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="yellow"
+                  style="background-color: #ffcc00"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="pink"
+                  style="background-color: #ff69b4"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="purple"
+                  style="background-color: #800080"
+                ></button>
+              </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="filter-section">
+              <h4>Brand</h4>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" value="carters" />
+                  <span class="checkmark"></span>
+                  Carter's
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="oshkosh" />
+                  <span class="checkmark"></span>
+                  OshKosh B'gosh
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="gap-kids" />
+                  <span class="checkmark"></span>
+                  Gap Kids
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="old-navy" />
+                  <span class="checkmark"></span>
+                  Old Navy
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="childrens-place" />
+                  <span class="checkmark"></span>
+                  Children's Place
+                </label>
+              </div>
+            </div>
+
+            <!-- Clear Filters -->
+            <button class="btn secondary clear-filters">
+              Clear All Filters
+            </button>
+          </aside>
+
+          <!-- Products Section -->
+          <section class="products-section">
+            <!-- Sort and View Options -->
+            <div class="products-header">
+              <div class="results-info">
+                <span id="results-count">24</span> products found
+              </div>
+              <div class="view-options">
+                <button class="filter-toggle" id="filter-toggle">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 4H21V6.172L13.172 14H10.828L3 6.172V4ZM3 20V17.828L10.828 10H13.172L21 17.828V20H3Z"
+                    />
+                  </svg>
+                  Filter
+                </button>
+                <select class="sort-select" id="sort-select">
+                  <option value="popular">Most Popular</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest First</option>
+                  <option value="rating">Highest Rated</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+              <!-- Product cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="pagination-btn prev" id="prev-page">
+                <span>&larr;</span> Previous
+              </button>
+              <div class="page-numbers">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+                <button class="page-btn" data-page="3">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn" data-page="8">8</button>
+              </div>
+              <button class="pagination-btn next" id="next-page">
+                Next <span>&rarr;</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="assets/icons/facebook.png" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="assets/icons/instagram.png" alt="Instagram"
+            /></a>
+            <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Your Store. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="product-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-body">
+          <div class="product-images">
+            <div class="main-image">
+              <img id="modal-main-image" src="" alt="Product" />
+              <button class="image-nav prev" id="image-prev">&lt;</button>
+              <button class="image-nav next" id="image-next">&gt;</button>
+            </div>
+            <div class="image-thumbnails" id="image-thumbnails">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-header">
+              <h2 id="modal-product-title"></h2>
+              <div class="product-brand" id="modal-product-brand"></div>
+            </div>
+            <div class="product-price-section">
+              <div class="price-info">
+                <span class="current-price" id="modal-current-price"></span>
+                <span class="original-price" id="modal-original-price"></span>
+              </div>
+              <div class="rating-section">
+                <div class="stars" id="modal-stars"></div>
+                <span class="review-count" id="modal-review-count"></span>
+              </div>
+            </div>
+            <div class="product-options">
+              <div class="option-group">
+                <label>Size:</label>
+                <div class="size-buttons" id="modal-size-buttons">
+                  <!-- Size buttons will be populated by JavaScript -->
+                </div>
+              </div>
+              <div class="option-group">
+                <label>Color:</label>
+                <div class="color-buttons" id="modal-color-buttons">
+                  <!-- Color buttons will be populated by JavaScript -->
+                </div>
+              </div>
+              <div class="option-group">
+                <label>Quantity:</label>
+                <div class="quantity-selector">
+                  <button class="qty-btn" id="qty-minus">-</button>
+                  <input
+                    type="number"
+                    id="qty-input"
+                    value="1"
+                    min="1"
+                    max="99"
+                  />
+                  <button class="qty-btn" id="qty-plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-description" id="modal-description">
+              <!-- Description will be populated by JavaScript -->
+            </div>
+            <div class="product-actions">
+              <button class="add-to-cart-modal" id="modal-add-to-cart">
+                Add to Cart
+              </button>
+              <button class="buy-now" id="modal-buy-now">Buy Now</button>
+              <button class="wishlist-btn" id="modal-wishlist">
+                <span class="heart">♥</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/kids.js"></script>
+  </body>
+</html>

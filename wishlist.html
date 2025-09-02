@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist - E-Commerce Storefront</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <h1>STORE</h1>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger">
+          <img src="assets/icons/menu.png" alt="Menu" />
+        </div>
+
+        <!-- Center: Search + Menu -->
+        <div class="nav-center" id="nav-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Search products..." />
+            <button>
+              <img src="assets/icons/search.png" alt="Search Icon" />
+            </button>
+          </div>
+          <ul class="nav-links">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Icons -->
+        <div class="nav-icons">
+          <a href="wishlist.html" class="active"
+            ><img src="assets/icons/wishlist.png" alt="Wishlist"
+          /></a>
+          <a href="cart.html"><img src="assets/icons/cart.png" alt="Cart" /></a>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Wishlist Header -->
+    <section class="wishlist-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="separator">></span>
+            <span class="current">My Wishlist</span>
+          </div>
+          <h1>My Wishlist</h1>
+          <p>Save your favorite items for later</p>
+        </div>
+        <div class="wishlist-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="wishlist-count">0</span>
+            <span class="stat-label">Items</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="total-value">$0.00</span>
+            <span class="stat-label">Total Value</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Wishlist Actions -->
+        <div class="wishlist-actions">
+          <div class="action-buttons">
+            <button class="btn secondary" id="clear-wishlist">
+              <img src="assets/icons/trash.png" alt="Clear" />
+              Clear All
+            </button>
+            <button class="btn primary" id="add-all-to-cart">
+              <img src="assets/icons/cart.png" alt="Cart" />
+              Add All to Cart
+            </button>
+          </div>
+          <div class="sort-options">
+            <select class="sort-select" id="wishlist-sort">
+              <option value="date-added">Date Added</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Wishlist Items -->
+        <div class="wishlist-container">
+          <div class="wishlist-items" id="wishlist-items">
+            <!-- Wishlist items will be populated by JavaScript -->
+          </div>
+
+          <!-- Empty Wishlist State -->
+          <div class="empty-wishlist" id="empty-wishlist" style="display: none">
+            <div class="empty-icon">
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+            <h3>Your wishlist is empty</h3>
+            <p>Start adding items you love to your wishlist</p>
+                         <div class="empty-actions">
+               <a href="men.html" class="btn primary">
+                 <img src="assets/icons/shop.png" alt="Shop" />
+                 Shop Men
+               </a>
+               <a href="women.html" class="btn secondary">
+                 <img src="assets/icons/shop.png" alt="Shop" />
+                 Shop Women
+               </a>
+               <a href="kids.html" class="btn secondary">
+                 <img src="assets/icons/shop.png" alt="Shop" />
+                 Shop Kids
+               </a>
+             </div>
+          </div>
+        </div>
+
+        <!-- Recently Viewed -->
+        <section class="recently-viewed">
+          <h2>Recently Viewed</h2>
+          <div class="products-grid" id="recently-viewed-grid">
+            <!-- Recently viewed products will be populated by JavaScript -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="assets/icons/facebook.png" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="assets/icons/instagram.png" alt="Instagram"
+            /></a>
+            <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Your Store. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/wishlist.js"></script>
+  </body>
+</html>

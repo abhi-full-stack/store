@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women's Collection - E-Commerce Storefront</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/women.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <h1>STORE</h1>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger">
+          <img src="assets/icons/menu.png" alt="Menu" />
+        </div>
+
+        <!-- Center: Search + Menu -->
+        <div class="nav-center" id="nav-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Search products..." />
+            <button>
+              <img src="assets/icons/search.png" alt="Search Icon" />
+            </button>
+          </div>
+          <ul class="nav-links">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html" class="active">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Icons -->
+        <div class="nav-icons">
+          <a href="wishlist.html"
+            ><img src="assets/icons/wishlist.png" alt="Wishlist"
+          /></a>
+          <a href="cart.html"><img src="assets/icons/cart.png" alt="Cart" /></a>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Header / Banner -->
+    <section class="category-banner">
+      <div class="container">
+        <div class="banner-content">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="separator">></span>
+            <span class="current">Women</span>
+          </div>
+          <h1>Shop Women's Collection</h1>
+          <p>Discover elegant styles for the modern woman</p>
+        </div>
+        <div class="banner-image">
+          <img
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&crop=center"
+            alt="Women's Fashion"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- Filters Sidebar -->
+          <aside class="filters-sidebar" id="filters-sidebar">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button class="close-filters" id="close-filters">
+                <span>&times;</span>
+              </button>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-section">
+              <h4>Price Range</h4>
+              <div class="price-range">
+                <input
+                  type="range"
+                  id="price-min"
+                  min="0"
+                  max="500"
+                  value="0"
+                  class="price-slider"
+                />
+                <input
+                  type="range"
+                  id="price-max"
+                  min="0"
+                  max="500"
+                  value="500"
+                  class="price-slider"
+                />
+                <div class="price-inputs">
+                  <input
+                    type="number"
+                    id="price-min-input"
+                    placeholder="Min"
+                    min="0"
+                    max="500"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    id="price-max-input"
+                    placeholder="Max"
+                    min="0"
+                    max="500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="filter-section">
+              <h4>Categories</h4>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" value="dresses" />
+                  <span class="checkmark"></span>
+                  Dresses
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="tops" />
+                  <span class="checkmark"></span>
+                  Tops
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="skirts" />
+                  <span class="checkmark"></span>
+                  Skirts
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="jeans" />
+                  <span class="checkmark"></span>
+                  Jeans
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="pants" />
+                  <span class="checkmark"></span>
+                  Pants
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="shoes" />
+                  <span class="checkmark"></span>
+                  Shoes
+                </label>
+              </div>
+            </div>
+
+            <!-- Size -->
+            <div class="filter-section">
+              <h4>Size</h4>
+              <div class="size-options">
+                <button class="size-btn" data-size="XS">XS</button>
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+              </div>
+            </div>
+
+            <!-- Color -->
+            <div class="filter-section">
+              <h4>Color</h4>
+              <div class="color-options">
+                <button
+                  class="color-btn"
+                  data-color="black"
+                  style="background-color: #000"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="white"
+                  style="background-color: #fff; border: 1px solid #ddd"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="pink"
+                  style="background-color: #ff69b4"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="red"
+                  style="background-color: #cc0000"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="blue"
+                  style="background-color: #0066cc"
+                ></button>
+                <button
+                  class="color-btn"
+                  data-color="purple"
+                  style="background-color: #800080"
+                ></button>
+              </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="filter-section">
+              <h4>Brand</h4>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" value="zara" />
+                  <span class="checkmark"></span>
+                  Zara
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="h&m" />
+                  <span class="checkmark"></span>
+                  H&M
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="forever21" />
+                  <span class="checkmark"></span>
+                  Forever 21
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="mango" />
+                  <span class="checkmark"></span>
+                  Mango
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="uniqlo" />
+                  <span class="checkmark"></span>
+                  Uniqlo
+                </label>
+              </div>
+            </div>
+
+            <!-- Clear Filters -->
+            <button class="btn secondary clear-filters">
+              Clear All Filters
+            </button>
+          </aside>
+
+          <!-- Products Section -->
+          <section class="products-section">
+            <!-- Sort and View Options -->
+            <div class="products-header">
+              <div class="results-info">
+                <span id="results-count">24</span> products found
+              </div>
+              <div class="view-options">
+                <button class="filter-toggle" id="filter-toggle">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 4H21V6.172L13.172 14H10.828L3 6.172V4ZM3 20V17.828L10.828 10H13.172L21 17.828V20H3Z"
+                    />
+                  </svg>
+                  Filter
+                </button>
+                <select class="sort-select" id="sort-select">
+                  <option value="popular">Most Popular</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest First</option>
+                  <option value="rating">Highest Rated</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+              <!-- Product cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="pagination-btn prev" id="prev-page">
+                <span>&larr;</span> Previous
+              </button>
+              <div class="page-numbers">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+                <button class="page-btn" data-page="3">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn" data-page="8">8</button>
+              </div>
+              <button class="pagination-btn next" id="next-page">
+                Next <span>&rarr;</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="assets/icons/facebook.png" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="assets/icons/instagram.png" alt="Instagram"
+            /></a>
+            <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Your Store. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="product-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-body">
+          <div class="product-images">
+            <div class="main-image">
+              <img id="modal-main-image" src="" alt="Product" />
+              <button class="image-nav prev" id="image-prev">&lt;</button>
+              <button class="image-nav next" id="image-next">&gt;</button>
+            </div>
+            <div class="image-thumbnails" id="image-thumbnails">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-header">
+              <h2 id="modal-product-title"></h2>
+              <div class="product-brand" id="modal-product-brand"></div>
+            </div>
+            <div class="product-price-section">
+              <div class="price-info">
+                <span class="current-price" id="modal-current-price"></span>
+                <span class="original-price" id="modal-original-price"></span>
+              </div>
+              <div class="rating-section">
+                <div class="stars" id="modal-stars"></div>
+                <span class="review-count" id="modal-review-count"></span>
+              </div>
+            </div>
+            <div class="product-options">
+              <div class="option-group">
+                <label>Size:</label>
+                <div class="size-buttons" id="modal-size-buttons">
+                  <!-- Size buttons will be populated by JavaScript -->
+                </div>
+              </div>
+              <div class="option-group">
+                <label>Color:</label>
+                <div class="color-buttons" id="modal-color-buttons">
+                  <!-- Color buttons will be populated by JavaScript -->
+                </div>
+              </div>
+              <div class="option-group">
+                <label>Quantity:</label>
+                <div class="quantity-selector">
+                  <button class="qty-btn" id="qty-minus">-</button>
+                  <input
+                    type="number"
+                    id="qty-input"
+                    value="1"
+                    min="1"
+                    max="99"
+                  />
+                  <button class="qty-btn" id="qty-plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-description" id="modal-description">
+              <!-- Description will be populated by JavaScript -->
+            </div>
+            <div class="product-actions">
+              <button class="add-to-cart-modal" id="modal-add-to-cart">
+                Add to Cart
+              </button>
+              <button class="buy-now" id="modal-buy-now">Buy Now</button>
+              <button class="wishlist-btn" id="modal-wishlist">
+                <span class="heart">♥</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/women.js"></script>
+  </body>
+</html>
